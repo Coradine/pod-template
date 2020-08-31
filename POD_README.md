@@ -1,29 +1,9 @@
-# ${POD_NAME}
+From [http://guides.cocoapods.org/making/private-cocoapods.html](http://guides.cocoapods.org/making/private-cocoapods.html)
 
-[![CI Status](https://img.shields.io/travis/${USER_NAME}/${REPO_NAME}.svg?style=flat)](https://travis-ci.org/${USER_NAME}/${REPO_NAME})
-[![Version](https://img.shields.io/cocoapods/v/${POD_NAME}.svg?style=flat)](https://cocoapods.org/pods/${POD_NAME})
-[![License](https://img.shields.io/cocoapods/l/${POD_NAME}.svg?style=flat)](https://cocoapods.org/pods/${POD_NAME})
-[![Platform](https://img.shields.io/cocoapods/p/${POD_NAME}.svg?style=flat)](https://cocoapods.org/pods/${POD_NAME})
+Add your Private Repo to your CocoaPods installation (if you've not done so already):
 
-## Example
+`pod repo add coradinepodspecs git@bitbucket.org:coradine/coradinepodspecs.git`
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To push an updated version of the podspec to our Coradine podspec repository use this command:
 
-## Requirements
-
-## Installation
-
-${POD_NAME} is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod '${POD_NAME}'
-```
-
-## Author
-
-${USER_NAME}, ${USER_EMAIL}
-
-## License
-
-${POD_NAME} is available under the MIT license. See the LICENSE file for more info.
+`pod repo push coradinepodspecs ${POD_NAME}.podspec`
