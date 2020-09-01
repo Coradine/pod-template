@@ -85,30 +85,13 @@ module Pod
       add_pods_to_podfile
       customise_prefix
       rename_classes_folder
-      ensure_carthage_compatibility
-      reinitialize_git_repo
-      run_pod_install
+      remove_git_repo
+      move_podspec
 
       @message_bank.farewell_message
     end
 
     #----------------------------------------#
-
-    def ensure_carthage_compatibility
-      FileUtils.ln_s('Example/Pods/Pods.xcodeproj', '_Pods.xcodeproj')
-    end
-
-    def run_pod_install
-      puts "\nRunning " + "pod install".magenta + " on your new library."
-      puts ""
-
-      Dir.chdir("Example") do
-        system "pod install"
-      end
-
-      `git add Example/#{pod_name}.xcodeproj/project.pbxproj`
-      `git commit -m "Initial commit"`
-    end
 
     def clean_template_files
       ["./**/.gitkeep", "configure", "_CONFIGURE.rb", "README.md", "LICENSE", "templates", "setup"].each do |asset|
@@ -167,17 +150,15 @@ module Pod
     def rename_template_files
       FileUtils.mv "POD_README.md", "README.md"
       FileUtils.mv "POD_LICENSE", "LICENSE"
-      FileUtils.mv "NAME.podspec", "#{pod_name}.podspec"
+      FileUtils.mv "NAME.podspec", "../#{pod_name}.podspec"
     end
 
     def rename_classes_folder
       FileUtils.mv "Pod", @pod_name
     end
 
-    def reinitialize_git_repo
+    def remove_git_repo
       `rm -rf .git`
-      `git init`
-      `git add -A`
     end
 
     def validate_user_details
