@@ -86,11 +86,20 @@ module Pod
       customise_prefix
       rename_classes_folder
       remove_git_repo
+      run_pod_install
 
       @message_bank.farewell_message
     end
 
     #----------------------------------------#
+    def run_pod_install
+      puts "\nRunning " + "pod install".magenta + " on your new library."
+      puts ""
+
+      Dir.chdir("Example") do
+        system "pod install"
+      end
+    end
 
     def clean_template_files
       ["./**/.gitkeep", "configure", "_CONFIGURE.rb", "README.md", "LICENSE", "templates", "setup"].each do |asset|
