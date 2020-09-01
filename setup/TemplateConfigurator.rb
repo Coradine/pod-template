@@ -86,7 +86,6 @@ module Pod
       customise_prefix
       rename_classes_folder
       remove_git_repo
-      move_podspec
 
       @message_bank.farewell_message
     end
