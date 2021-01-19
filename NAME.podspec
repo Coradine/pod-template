@@ -6,10 +6,10 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://bitbucket.org/'
+  s.homepage         = 'https://github.com/'
   s.license          = 'Private'
   s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
-  s.source           = { :git => 'https://bitbucket.org/coradine/cascomponentlibrary.git', :tag => s.name.to_s + '/' + s.version.to_s }
+  s.source           = { :git => 'https://github.com/Coradine/CASComponentLibrary.git', :tag => s.name.to_s + '/' + s.version.to_s }
 
   s.ios.deployment_target = '13.0'
 
