@@ -2,7 +2,7 @@ From [http://guides.cocoapods.org/making/private-cocoapods.html](http://guides.c
 
 Add your Private Repo to your CocoaPods installation (if you've not done so already):
 
-`pod repo add coradinepodspecs git@bitbucket.org:coradine/coradinepodspecs.git`
+`pod repo add coradinepodspecs git@github.com:Coradine/CoradinePodspecs.git`
 
 To push an updated version of the podspec to our Coradine podspec repository use this command:
 
